@@ -8,6 +8,10 @@
   </div>
 </div>
 
-<% @user.feed.latest.each do |photo| %>
-  <%= render "photos/photo", photo: photo %>
-<% end %>
+<div>
+
+    <% @user.feed.latest.each do |photo| %>
+      <%= render "photos/photo", photo: photo %>
+    <% end %>
+
+</div>

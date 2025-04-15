@@ -5,6 +5,22 @@ class UsersController < ApplicationController
     @users = @q.result
   end
 
+  def feed
+    if current_user != @user
+      redirect_back(fallback_location: "/", alert: "You're not authorized for that.")
+      return
+    end
+
+  end
+
+  def discover
+    if current_user != @user
+      redirect_back(fallback_location: "/", alert: "You're not authorized for that.")
+      return
+    end
+
+  end
+
   private
 
     def set_user
